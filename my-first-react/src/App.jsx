@@ -15,7 +15,7 @@ function List(props) {
 	return (
 		<ul>
 			{props.animals.map((animal) => {
-				return <ListItem key={animal} animal={animal} />;
+				return animal.startsWith("L") ? <li key={animal}>{animal} </li> : null;
 			})}
 		</ul>
 	);
