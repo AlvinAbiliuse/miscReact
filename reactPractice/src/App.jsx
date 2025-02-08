@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 
-function Button(props) {
+function Button({ btnStyle, click }) {
 	return (
-		<button style={{ color: props.btnStyle }}>
-			{props.click === "yes" ? "Click Me!" : "Don't Click Me!"}
+		<button style={{ color: btnStyle }}>
+			{click === "yes" ? "Click Me!" : "Don't Click Me!"}
 		</button>
 	);
 }
