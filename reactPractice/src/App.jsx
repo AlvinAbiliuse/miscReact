@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-function Button({ btnStyle, click }) {
+function Button({ btnStyle, click = "yes" }) {
 	return (
 		<button style={{ color: btnStyle }}>
 			{click === "yes" ? "Click Me!" : "Don't Click Me!"}
@@ -12,9 +12,9 @@ function Button({ btnStyle, click }) {
 export default function App() {
 	return (
 		<>
-			<Button click="yes" btnStyle="gray" />
+			<Button btnStyle="gray" />
 			<Button click="no" btnStyle="red" />
-			<Button click="yes" btnStyle="blue" />
+			<Button btnStyle="blue" />
 		</>
 	);
 }
