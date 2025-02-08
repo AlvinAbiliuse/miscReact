@@ -9,7 +9,7 @@ function Button(props) {
 	);
 }
 
-function App() {
+export default function App() {
 	return (
 		<>
 			<Button click="yes" btnStyle="gray" />
@@ -18,5 +18,3 @@ function App() {
 		</>
 	);
 }
-
-export default App;
