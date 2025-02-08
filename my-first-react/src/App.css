@@ -6,5 +6,6 @@
 }
 
 li {
-	list-style: none;
+	max-width: 150px;
+	margin: 0 auto;
 }

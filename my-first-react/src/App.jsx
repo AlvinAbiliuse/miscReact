@@ -7,17 +7,27 @@ function greeting() {
 	);
 }
 
-let animals = ["Dog", "Cat", "Lion", "Cow", "Lizard"];
+function ListItem(props) {
+	return <li>{props.animal}</li>;
+}
 
-let animalList = animals.map((animal) => <li key={animal}>{animal}</li>);
+function List(props) {
+	return (
+		<ul>
+			{props.animals.map((animal) => {
+				return <ListItem key={animal} animal={animal} />;
+			})}
+		</ul>
+	);
+}
 
 function App() {
-	const [count, setCount] = useState(0);
+	const animals = ["Lions", "Cow", "Snake", "Lizard"];
 
 	return (
 		<>
 			<h1>Animals</h1>
-			<ul>{animalList}</ul>
+			<List animals={animals} />
 			{greeting()}
 		</>
 	);
