@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 
 const COLORS = ["pink", "green", "blue", "yellow", "purple"];
 
+let storage = window.localStorage;
+
+if (storage.length == 0) {
+	storage.setItem("data", JSON.stringify({ color: COLORS[0], count: 0 }));
+}
+
+let data = JSON.parse(storage["data"]);
+
+console.log(data);
+
 export default function App() {
-	const [backgroundColor, setBackgroundColor] = useState(() => COLORS[0]);
-	const [count, setCount] = useState(() => 0);
+	const [backgroundColor, setBackgroundColor] = useState(() => data.color);
+	const [count, setCount] = useState(() => data.count);
 
 	const onButtonClick = (color) => () => {
+		data.color = color;
+		data.count = data.count + 1;
+		storage.data = JSON.stringify(data);
 		setBackgroundColor(color);
 		setCount((n) => n + 1);
 	};
