@@ -44,7 +44,7 @@ export default function App() {
 					</button>
 				))}
 			</div>
-			<button className="count">Background change count: {count}</button>
+			<p className="count">Background change count: {count}</p>
 		</div>
 	);
 }

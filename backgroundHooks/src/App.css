@@ -34,7 +34,7 @@ button {
 	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-button:hover {
+.btnContainer button:hover {
 	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 	background-color: #fff;
 }
@@ -45,6 +45,15 @@ button.selected {
 }
 
 .count {
-	display: block;
+	padding: 1.2rem 2rem;
+	font-size: 1.8rem;
+	font-weight: 600;
+	max-width: 500px;
+	text-align: center;
+	border: 5px solid white;
+	border-radius: 0.5rem;
+	background-color: #f1f1f1;
+	transition: all 0.1s ease-in-out;
+	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.5);
 	margin: 0 auto;
 }
