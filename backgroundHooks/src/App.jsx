@@ -5,6 +5,7 @@ const COLORS = ["pink", "green", "blue", "yellow", "purple"];
 
 export default function App() {
 	const [backgroundColor, setBackgroundColor] = useState(() => COLORS[0]);
+	const [count, setCount] = useState(() => 0);
 
 	const onButtonClick = (color) => () => {
 		setBackgroundColor(color);
@@ -27,6 +28,7 @@ export default function App() {
 					{color}
 				</button>
 			))}
+			<button className="count">{count}</button>
 		</div>
 	);
 }
