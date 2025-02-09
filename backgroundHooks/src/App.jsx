@@ -4,7 +4,7 @@ import "./App.css";
 const COLORS = ["pink", "green", "blue", "yellow", "purple"];
 
 export default function App() {
-	const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
+	const [backgroundColor, setBackgroundColor] = useState(() => COLORS[0]);
 
 	const onButtonClick = (color) => () => {
 		setBackgroundColor(color);
