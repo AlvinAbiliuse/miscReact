@@ -9,6 +9,7 @@ export default function App() {
 
 	const onButtonClick = (color) => () => {
 		setBackgroundColor(color);
+		setCount((n) => n + 1);
 	};
 
 	return (
@@ -30,7 +31,7 @@ export default function App() {
 					</button>
 				))}
 			</div>
-			<button className="count">{count}</button>
+			<button className="count">Background change count: {count}</button>
 		</div>
 	);
 }
