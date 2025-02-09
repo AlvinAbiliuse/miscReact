@@ -18,16 +18,18 @@ export default function App() {
 				backgroundColor,
 			}}
 		>
-			{COLORS.map((color) => (
-				<button
-					type="button"
-					key={color}
-					onClick={onButtonClick(color)}
-					className={backgroundColor === color ? "selected" : ""}
-				>
-					{color}
-				</button>
-			))}
+			<div className="btnContainer">
+				{COLORS.map((color) => (
+					<button
+						type="button"
+						key={color}
+						onClick={onButtonClick(color)}
+						className={backgroundColor === color ? "selected" : ""}
+					>
+						{color}
+					</button>
+				))}
+			</div>
 			<button className="count">{count}</button>
 		</div>
 	);
