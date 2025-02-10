@@ -31,14 +31,34 @@ function List(props) {
 	);
 }
 
-function App() {
-	const animals = ["Lions", "Cow", "Snake", "Lizard"];
+function currentDate() {
+	let d = new Date();
+	let hours, minutes, seconds;
+	if (d.getHours() < 10) {
+		hours = "0" + d.getHours();
+	} else hours = d.getHours();
 
+	if (d.getMinutes() < 10) {
+		minutes = "0" + d.getMinutes();
+	} else minutes = d.getMinutes();
+
+	if (d.getSeconds() < 10) {
+		seconds = "0" + d.getSeconds();
+	} else seconds = d.getSeconds();
+
+	return `${hours}:${minutes}:${seconds}`;
+}
+
+function App({ n }) {
+	let [num, setNum] = useState(currentDate());
+
+	const animals = ["Lions", "Cow", "Snake", "Lizard"];
+	setInterval(() => {
+		setNum((newNum) => (newNum = currentDate()));
+	}, 500);
 	return (
 		<>
-			<h1>Animals</h1>
-			<List animals={animals} />
-			{greeting()}
+			<p>{num}</p>
 		</>
 	);
 }
