@@ -37,6 +37,21 @@ function Avatar({
 	);
 }
 
+function GetImage({ person, size }) {
+	let newSize = "s";
+	if (size > 90) newSize = "b";
+	console.log(person);
+	return (
+		<img
+			className="avatar"
+			src={getImageUrl(person.imageId, newSize)}
+			alt={person.name}
+			width={size}
+			height={size}
+		/>
+	);
+}
+
 export default function Gallery() {
 	return (
 		<div>
@@ -63,6 +78,13 @@ export default function Gallery() {
 				awards="(Miyake Prize for geochemistry, Tanaka Prize)"
 				awardsN="2"
 				discovered="a method for measuring carbon dioxide in seawater"
+			/>
+			<GetImage
+				size={100}
+				person={{
+					name: "Gregorio Y. Zara",
+					imageId: "7vQD0fP",
+				}}
 			/>
 		</div>
 	);
