@@ -1,4 +1,4 @@
-import { getImageUrl } from "./utils.js";
+import { getImageUrl } from "./utils.jsx";
 
 export default function Gallery() {
 	return (
