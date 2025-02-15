@@ -10,9 +10,8 @@ export default function Multiple() {
 	const selectedCount = selectedId.length;
 
 	function handleToggle(toggledId) {
-		// TODO: allow multiple selection
-		if (toggledId in selectedId) {
-			setSelectedId(selectedId.filter((e) => e !== toggledId));
+		if (selectedId.includes(toggledId)) {
+			setSelectedId((list) => list.filter((e) => e !== toggledId));
 		} else {
 			setSelectedId([...selectedId, toggledId]);
 		}
@@ -26,7 +25,7 @@ export default function Multiple() {
 					<Letter
 						key={letter.id}
 						letter={letter}
-						isSelected={selectedId.length > 0 ? letter.id in selectedId : false}
+						isSelected={selectedId.includes(letter.id)}
 						onToggle={handleToggle}
 					/>
 				))}
