@@ -6,7 +6,6 @@ export default function Multiple() {
 	const [selectedId, setSelectedId] = useState([]);
 	console.log(selectedId);
 
-	// TODO: allow multiple selection
 	const selectedCount = selectedId.length;
 
 	function handleToggle(toggledId) {
