@@ -1,3 +1,35 @@
 .highlighted {
-	background-color: cyan;
-};
+	background-color: #c2fffc;
+}
+
+html {
+	width: 100%;
+}
+
+body {
+	width: 100%;
+}
+
+#root {
+	width: 100%;
+	h2 {
+		text-align: center;
+	}
+	> * {
+		margin: 50px auto;
+	}
+}
+ul {
+	margin: 0 auto;
+	padding: 0;
+	max-width: 370px;
+}
+
+li {
+	padding: 20px;
+	list-style: none;
+	button {
+		width: 60px;
+		margin-right: 20px;
+	}
+}
