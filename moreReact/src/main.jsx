@@ -5,7 +5,11 @@ import Multiple from "./multiple/Multiple.jsx";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<Multiple />
-		<Mail />
+		<div class="container">
+			<Multiple />
+		</div>
+		<div class="container">
+			<Mail />
+		</div>
 	</StrictMode>
 );
