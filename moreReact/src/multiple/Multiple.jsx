@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { letters } from "./data.jsx";
 import Letter from "./Letter.jsx";
-import "./Multiple.css";
 
 export default function Multiple() {
-	const [selectedId, setSelectedId] = useState(null);
+	const [selectedId, setSelectedId] = useState([]);
+	console.log(selectedId);
 
 	// TODO: allow multiple selection
-	const selectedCount = 1;
+	const selectedCount = selectedId.length;
 
 	function handleToggle(toggledId) {
 		// TODO: allow multiple selection
-		setSelectedId(toggledId);
+		if (toggledId in selectedId) {
+			setSelectedId(selectedId.filter((e) => e !== toggledId));
+		} else {
+			setSelectedId([...selectedId, toggledId]);
+		}
 	}
 
 	return (
@@ -22,10 +26,7 @@ export default function Multiple() {
 					<Letter
 						key={letter.id}
 						letter={letter}
-						isSelected={
-							// TODO: allow multiple selection
-							letter.id === selectedId
-						}
+						isSelected={selectedId.length > 0 ? letter.id in selectedId : false}
 						onToggle={handleToggle}
 					/>
 				))}
