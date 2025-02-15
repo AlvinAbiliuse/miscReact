@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Mail from "./Mail.jsx";
+import Mail from "./mail/Mail.jsx";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
